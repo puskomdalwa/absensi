@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class absensiModel extends Model
+class AbsensiModel extends Model
 {
     use HasFactory;
     protected $table = 'absensi';
@@ -18,4 +18,9 @@ class absensiModel extends Model
         'longitude',
         'keterangan'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

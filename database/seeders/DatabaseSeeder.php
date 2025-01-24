@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,5 +15,25 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // User::factory(10)->create();
+        DB::table('role')->insert([
+            'akses' => 'admin',
+        ]);
+        DB::table('role')->insert([
+            'akses' => 'user',
+        ]);
+        DB::table('users')->insert([
+            'email' => 'admin@example.com',
+            'username' => 'admin',
+            'name' => 'Admin',
+            'password' => bcrypt('admin'),
+            'role_id' => 1,
+        ]);
+        DB::table('users')->insert([
+            'email' => 'user@example.com',
+            'username' => 'user',
+            'name' => 'User',
+            'password' => bcrypt('user'),
+            'role_id' => 2,
+        ]);
     }
 }

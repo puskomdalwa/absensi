@@ -20,8 +20,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('/auth', [AuthApiController::class, 'login']);
-Route::post('/absensi', [AuthApiController::class, 'simpan_absensi']);
-Route::post('/data',[AuthApiController::class,'index']);
-Route::post('/profile',[AuthApiController::class,'profil_user']);
+Route::post('/absensi', [AuthApiController::class, 'simpanAbsensi']);
+Route::post('/data', [AuthApiController::class, 'index']);
+Route::post('/profile', [AuthApiController::class, 'profilUser']);
 Route::get('/test', [AuthApiController::class, 'coba']);
-Route::post('/logout',[AuthApiController::class,'keluar'])->middleware('auth:sanctum');
+Route::post('/logout', [AuthApiController::class, 'keluar'])->middleware('auth:sanctum');
