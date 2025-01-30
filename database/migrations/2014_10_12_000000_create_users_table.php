@@ -20,6 +20,9 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('password');
             $table->foreignId('role_id')->constrained('role');
+            $table->foreignId('departemen_id')->nullable()->constrained('departemen');
+            $table->enum('jenis_kelamin', ['Laki-laki', 'Perempuan', '*'])->nullable();
+            $table->string('photo')->nullable();
             $table->timestamps();
         });
     }

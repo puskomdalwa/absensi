@@ -15,6 +15,14 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // User::factory(10)->create();
+        DB::table('departemen')->insert([
+            'kode' => '001',
+            'nama' => 'Admin',
+        ]);
+        DB::table('departemen')->insert([
+            'kode' => '040',
+            'nama' => 'Dosen',
+        ]);
         DB::table('role')->insert([
             'akses' => 'admin',
         ]);
@@ -27,6 +35,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'Admin',
             'password' => bcrypt('admin'),
             'role_id' => 1,
+            'departemen_id' => 1,
+            'jenis_kelamin' => '*',
         ]);
         DB::table('users')->insert([
             'email' => 'user@example.com',
@@ -34,6 +44,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'User',
             'password' => bcrypt('user'),
             'role_id' => 2,
+            'departemen_id' => 2,
+            'jenis_kelamin' => 'Laki-laki',
         ]);
     }
 }

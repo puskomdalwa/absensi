@@ -1,6 +1,6 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
-        <a href="{{ route('admin.dashboard') }}" class="app-brand-link">
+        <a href="{{ route('admin.dashboard.index') }}" class="app-brand-link">
             <span class="app-brand-logo demo">
                 <img src="{{ asset('assets/img/favicon-admin.png') }}" alt="logo">
             </span>
@@ -18,78 +18,72 @@
     <ul class="menu-inner py-1">
         <!-- Dashboards -->
         <li class="menu-item {{ request()->routeIs('admin.dashboard*') ? 'active' : '' }}">
-            <a href="{{ route('admin.dashboard') }}" class="menu-link">
+            <a href="{{ route('admin.dashboard.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-smart-home"></i>
                 <div data-i18n="Dashboards">Dashboards</div>
             </a>
         </li>
 
-        <!-- News-->
+        <!-- DATA-->
         <li class="menu-header small">
-            <span class="menu-header-text" data-i18n="News">News</span>
+            <span class="menu-header-text" data-i18n="News">DATA</span>
         </li>
 
-        <!-- Category -->
-        <li class="menu-item {{ request()->routeIs('admin.category*') ? 'active' : '' }}">
-            <a href="{{ route('admin.category.index') }}" class="menu-link">
+        <!-- Role -->
+        <li class="menu-item {{ request()->routeIs('admin.role*') ? 'active' : '' }}">
+            <a href="{{ route('admin.role.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-mail"></i>
-                <div data-i18n="Category">Category</div>
+                <div data-i18n="Role">Role</div>
             </a>
         </li>
-        <!-- News -->
-        <li class="menu-item {{ request()->routeIs('admin.news*') ? 'active' : '' }}">
-            <a href="{{ route('admin.news.index') }}" class="menu-link">
+        <!-- Departemen -->
+        <li class="menu-item {{ request()->routeIs('admin.departemen*') ? 'active' : '' }}">
+            <a href="{{ route('admin.departemen.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-mail"></i>
-                <div data-i18n="News">News</div>
+                <div data-i18n="Departemen">Departemen</div>
             </a>
         </li>
 
-        <!-- Game-->
+        <!-- ABSENSI-->
         <li class="menu-header small">
-            <span class="menu-header-text" data-i18n="Game">Game</span>
+            <span class="menu-header-text" data-i18n="Absensi">Absensi</span>
         </li>
 
-        <!-- Player -->
-        <li class="menu-item {{ request()->routeIs('admin.player*') ? 'active' : '' }}">
-            <a href="{{ route('admin.player.index') }}" class="menu-link">
+        <!-- Semua -->
+        <li class="menu-item {{ request()->routeIs('admin.dosen*') ? 'active' : '' }}">
+            <a href="{{ route('admin.departemen.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-mail"></i>
-                <div data-i18n="Player">Player</div>
+                <div data-i18n="Semua">Semua</div>
             </a>
         </li>
-        <!-- Score -->
-        <li class="menu-item">
-            <a href="app-email.html" class="menu-link">
-                <i class="menu-icon tf-icons ti ti-mail"></i>
-                <div data-i18n="Score">Score</div>
-            </a>
-        </li>
+        @foreach (\Helper::getDepartemen() as $item)
+            <!-- {{ $item->nama }} -->
+            <li class="menu-item {{ request()->routeIs('admin.dosen*') ? 'active' : '' }}">
+                <a href="{{ route('admin.departemen.index') }}" class="menu-link">
+                    <i class="menu-icon tf-icons ti ti-mail"></i>
+                    <div data-i18n="{{ $item->nama }}">{{ $item->nama }}</div>
+                </a>
+            </li>
+        @endforeach
 
-        <!-- Administrator-->
+        <!-- ADMINISTRATOR-->
         <li class="menu-header small">
-            <span class="menu-header-text" data-i18n="Administrator">Administrator</span>
+            <span class="menu-header-text" data-i18n="Administrator">ADMINISTRATOR</span>
         </li>
 
         <!-- Users -->
-        <li class="menu-item">
-            <a href="app-email.html" class="menu-link">
+        <li class="menu-item {{ request()->routeIs('admin.user*') ? 'active' : '' }}">
+            <a href="{{ route('admin.user.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-mail"></i>
                 <div data-i18n="Users">Users</div>
             </a>
         </li>
         <!-- Profile -->
-        <li class="menu-item">
-            <a href="app-email.html" class="menu-link">
+        <li class="menu-item {{ request()->routeIs('admin.profile*') ? 'active' : '' }}">
+            <a href="{{ route('admin.profile.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-mail"></i>
                 <div data-i18n="Profile">Profile</div>
             </a>
         </li>
-        <!-- Logout -->
-        <li class="menu-item">
-            <a href="app-email.html" class="menu-link">
-                <i class="menu-icon tf-icons ti ti-mail"></i>
-                <div data-i18n="Logout">Logout</div>
-            </a>
-        </li>
-
     </ul>
 </aside>

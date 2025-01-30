@@ -15,7 +15,7 @@
         <div class="layout-container">
             <!-- Menu -->
 
-            @include('layouts.admin.sidebar')
+            @include('layouts.admin.sidebar-manual')
             <!-- / Menu -->
 
             <!-- Layout container -->

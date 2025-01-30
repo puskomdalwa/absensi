@@ -54,4 +54,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(absensiModel::class);
     }
+
+    public function departemen(){
+        return $this->belongsTo(Departemen::class);
+    }
 }

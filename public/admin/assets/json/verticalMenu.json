@@ -8,11 +8,29 @@
       "role": "admin,player"
     },
     {
-      "menuHeader": "News",
+      "menuHeader": "Data",
       "role": "admin"
     },
     {
-      "name": "Category",
+      "name": "Role",
+      "url": "/admin/role",
+      "icon": "menu-icon tf-icons ti ti-folder",
+      "slug": "admin.role.",
+      "role": "admin"
+    },
+    {
+      "name": "Departemen",
+      "url": "/admin/departemen",
+      "icon": "menu-icon tf-icons ti ti-folder",
+      "slug": "admin.departemen.",
+      "role": "admin"
+    },
+    {
+      "menuHeader": "Absensi",
+      "role": "admin"
+    },
+    {
+      "name": "Dosen",
       "url": "/admin/category",
       "icon": "menu-icon tf-icons ti ti-folder",
       "slug": "admin.category.",
@@ -24,46 +42,6 @@
       "icon": "menu-icon tf-icons ti ti-files",
       "slug": "admin.news.",
       "role": "admin"
-    },
-    {
-      "menuHeader": "Game",
-      "role": "admin"
-    },
-    {
-      "name": "Player",
-      "url": "/admin/player",
-      "icon": "menu-icon tf-icons ti ti-user",
-      "slug": "admin.player.",
-      "role": "admin"
-    },
-    {
-      "name": "Typing Game",
-      "icon": "menu-icon tf-icons ti ti-keyboard",
-      "slug": "admin.typing",
-      "role": "admin",
-      "submenu": [
-        {
-          "name": "Level",
-          "url": "/admin/typing-level",
-          "icon": "menu-icon tf-icons ti ti-list",
-          "slug": "admin.typing-level.",
-          "role": "admin"
-        },
-        {
-          "name": "Content",
-          "url": "/admin/typing",
-          "icon": "menu-icon tf-icons ti ti-keyboard",
-          "slug": "admin.typing.",
-          "role": "admin"
-        },
-        {
-          "name": "Score",
-          "url": "/admin/typing-score",
-          "icon": "menu-icon tf-icons ti ti-award",
-          "slug": "admin.typing-score.",
-          "role": "admin"
-        }
-      ]
     },
     {
       "menuHeader": "Administrator",

@@ -6,10 +6,10 @@
                 <script>
                     document.write(new Date().getFullYear());
                 </script>
-                , made with ❤️ by <a href="#" class="footer-link">Arabic Keyboard</a>
+                , made with ❤️ by <a href="#" class="footer-link">Absensi App</a>
             </div>
             <div class="d-none d-lg-inline-block">
-                <a href="#" class="footer-link me-4">Arabic Keyboard IT</a>
+                <a href="#" class="footer-link me-4">Absensi App</a>
             </div>
         </div>
     </div>

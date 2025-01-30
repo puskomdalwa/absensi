@@ -1,5 +1,5 @@
 /*
-Example: 
+Example:
 var dataTable = initDataTables('table-1', 'loader-category', 'card-category', 'new-record-button', false,
     'News', "{{ route('admin.category.data') }}",
     [{
@@ -31,7 +31,9 @@ function initDataTables(
     isResponsive,
     title,
     url,
-    columns
+    columns,
+    params = false,
+    saveState = false
 ) {
     var initColumns = [];
     if (isResponsive) {
@@ -63,12 +65,17 @@ function initDataTables(
         search: {
             return: true,
         },
-        // stateSave: true, //set true if you want save page after close and open again
+        stateSave:  saveState,
         ajax: {
             url: url,
-            // data: function (d) {
-            //     d.level_id = $("#level_id").val();
-            // },
+            method: 'GET',
+            data: function (d) {
+                if (params) {
+                    params.forEach(variable => {
+                        d[variable] = $(`#${variable}`).val(); // Menggunakan template literal untuk memilih elemen
+                    });
+                }
+            },
             beforeSend: function () {
                 // var loader = `@include('components.loader', ['idLoader' => ${loaderId}])`;
                 // $("#" + loaderId).append(loader);

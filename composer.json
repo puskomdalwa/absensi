@@ -19,7 +19,8 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^3.4",
         "mfahmialif/ed": "dev-master",
-        "stevebauman/location": "^6.6"
+        "stevebauman/location": "^6.6",
+        "yajra/laravel-datatables-oracle": "^9.21"
     },
     "require-dev": {
         "facade/ignition": "^2.3.6",
